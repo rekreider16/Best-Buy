@@ -15,9 +15,7 @@ namespace BestBuy
 #else
             string jsonText = File.ReadAllText("appsettings.development.json");
 #endif
-            string connStr = JObject.Parse(jsonText)["ConnectionStrings"]["DefaultConnection"].ToString();
-
-            this.connStr = connStr;
+            connStr = JObject.Parse(jsonText)["ConnectionStrings"]["DefaultConnection"].ToString();
         }
 
         private string connStr;
